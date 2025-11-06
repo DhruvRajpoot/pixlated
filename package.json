@@ -1,0 +1,30 @@
+{
+  "name": "pixlated",
+  "description": "A lightweight web component for creating grainy/noisy image effects using Canvas or CSS.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Bridgetamana/pixlated#readme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bridgetamana/pixalated.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bridgetamana/pixalated/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "web-component",
+    "grain",
+    "noise",
+    "image-effect",
+    "pixlated"
+  ],
+  "author": "Bridget Amana",
+  "license": "Apache-2.0"
+}
