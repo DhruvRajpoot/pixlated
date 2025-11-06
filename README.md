@@ -1,2 +1,2 @@
 # pixalated
-A web component that adds a film-grain or noise effect using Canvas or CSS.
+A lightweight web component for creating grainy/noisy image effects using Canvas or CSS.
