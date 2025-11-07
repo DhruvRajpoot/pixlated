@@ -177,6 +177,7 @@
     position: absolute;
     left: 12px;
     top: 7px;
+    pointer-events: none;
   }
 
   input[type="range"] {
@@ -188,6 +189,7 @@
     outline: none;
     -webkit-appearance: none;
     appearance: none;
+    cursor: pointer;
   }
 
   input[type="range"]::-webkit-slider-thumb {
@@ -217,10 +219,15 @@
     position: absolute;
     right: 12px;
     top: 7px;
+    pointer-events: none;
   }
 
   .image-display {
     text-align: center;
+    margin-top: var(--spacing-lg);
+  }
+
+  .bg-display {
     margin-top: var(--spacing-lg);
   }
 
@@ -315,6 +322,25 @@
 
   .theme-btn svg.rotate {
     transform: rotate(360deg);
+  }
+
+  .demo-bg {
+    width: 100%;
+    min-height: 300px;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+  }
+
+  .demo-bg-title {
+    color: var(--foreground);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .demo-bg-text {
+    color: var(--foreground-muted);
+    max-width: 500px;
   }
 }
 

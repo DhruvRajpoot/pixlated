@@ -1,3 +1,5 @@
+import { applyNoise, clampIntensity } from './utils/noise.js';
+
 class PixlatedImage extends HTMLElement {
     static DEBUG = false; // Set to true for verbose logging
 
@@ -135,7 +137,7 @@ class PixlatedImage extends HTMLElement {
         }
 
         const rawIntensity = parseFloat(this.getAttribute('intensity'));
-        const intensity = this._clampIntensity(rawIntensity);
+        const intensity = clampIntensity(rawIntensity, 0.1);
         const canvasWidth = this.canvas.width;
         const canvasHeight = this.canvas.height;
 
@@ -144,14 +146,8 @@ class PixlatedImage extends HTMLElement {
 
         if (intensity > 0) {
             const imageData = this.ctx.getImageData(0, 0, canvasWidth, canvasHeight);
-            const data = imageData.data;
-            for (let i = 0; i < data.length; i += 4) {
-                const noise = (Math.random() - 0.5) * 255 * intensity;
-                data[i] = Math.max(0, Math.min(255, data[i] + noise));
-                data[i + 1] = Math.max(0, Math.min(255, data[i + 1] + noise));
-                data[i + 2] = Math.max(0, Math.min(255, data[i + 2] + noise));
-            }
-            this.ctx.putImageData(imageData, 0, 0);
+            const noisyData = applyNoise(imageData, intensity);
+            this.ctx.putImageData(noisyData, 0, 0);
         }
     }
 
@@ -195,22 +191,6 @@ class PixlatedImage extends HTMLElement {
         console.error(`<pixlated-image>: Failed to load image from "${this.getAttribute('src')}"`);
     }
 
-    _clampIntensity(value) {
-        const defaultIntensity = 0.1;
-        if (value === null || value === undefined || isNaN(value)) {
-            return defaultIntensity;
-        }
-        if (value < 0) {
-            this._log('debug', `Intensity ${value} clamped to 0`);
-            return 0;
-        }
-        if (value > 1) {
-            this._log('debug', `Intensity ${value} clamped to 1`);
-            return 1;
-        }
-        return value;
-    }
-
     _validateDimension(value, defaultValue, dimName) {
         const parsed = parseInt(value, 10);
         if (isNaN(parsed) || parsed <= 0) {
@@ -251,7 +231,7 @@ class PixlatedImage extends HTMLElement {
         const rawIntensity = parseFloat(this.getAttribute('intensity'));
         return {
             src: this.getAttribute('src'),
-            intensity: this._clampIntensity(rawIntensity),
+            intensity: clampIntensity(rawIntensity, 0.1),
             width: this.canvas.width,
             height: this.canvas.height,
             alt: this.altText

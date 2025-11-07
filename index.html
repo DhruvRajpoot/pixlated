@@ -148,6 +148,38 @@
         </div>
       </div>
 
+      <div class="playground">
+        <h2>Background Noise</h2>
+        <div class="demo-controls">
+          <div class="bg-display">
+            <pixlated-bg
+              id="demoBg"
+              class="demo-bg"
+              intensity="0.15"
+              color="#09090b"
+            >
+              <h3 class="demo-bg-title">Noisy Background</h3>
+              <p class="demo-bg-text">
+                This is a grainy background effect perfect for hero sections, cards, or any element that needs texture. 
+                Adjust the intensity below to see the effect.
+              </p>
+            </pixlated-bg>
+          </div>
+          <div class="control-group">
+            <label> BG Intensity </label>
+            <input
+              type="range"
+              id="bgIntensitySlider"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.15"
+            />
+            <span class="value-display" id="bgIntensityValue">0.15</span>
+          </div>
+        </div>
+      </div>
+
       <div class="examples">
         <div class="example-card">
           <h3>Subtle Grain</h3>
@@ -207,13 +239,17 @@
       </footer>
     </div>
 
-    <script src="/src/pixlated.js"></script>
+    <script type="module" src="/src/pixlated.js"></script>
+    <script type="module" src="/src/pixlated-bg.js"></script>
     <script>
       const demoImage = document.getElementById("demoImage");
+      const demoBg = document.getElementById("demoBg");
       const darkToggle = document.getElementById("dark-toggle");
       const lightToggle = document.getElementById("light-toggle");
       const intensitySlider = document.getElementById("intensitySlider");
       const intensityValue = document.getElementById("intensityValue");
+      const bgIntensitySlider = document.getElementById("bgIntensitySlider");
+      const bgIntensityValue = document.getElementById("bgIntensityValue");
 
       const loadTheme = () => {
         const savedTheme = localStorage.getItem("theme");
@@ -232,6 +268,12 @@
         const value = e.target.value;
         intensityValue.textContent = value;
         demoImage.setAttribute("intensity", value);
+      });
+
+      bgIntensitySlider.addEventListener("input", (e) => {
+        const value = e.target.value;
+        bgIntensityValue.textContent = value;
+        demoBg.setAttribute("intensity", value);
       });
 
       darkToggle.addEventListener("click", () => {
