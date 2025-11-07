@@ -1,7 +1,7 @@
 @font-face {
   font-family: "NotoSansMono";
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400 600 700;
   font-display: swap;
   src: url("assets/font/NotoSansMono-VariableFont_wdth\,wght.ttf")
     format("truetype");
@@ -11,17 +11,29 @@
   :root {
     --background: #fafafa;
     --foreground: #09090b;
-    --border-color: #dddde0;
+    --foreground-muted: rgba(9, 9, 11, 0.7);
+    --border-color: rgba(0, 0, 0, 0.1);
     --card-color: #ededee;
-    --card-color-darker: #bcbcbd;
+    --card-color-darker: #d8d8da;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 4rem;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
   }
 
   .dark {
-    --background: #09090b;
-    --border-color: #242425;
-    --foreground: #fafafa;
-    --card-color: #141415;
-    --card-color-darker: #1f1f20;
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --foreground-muted: rgba(237, 237, 237, 0.7);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-color: #141414;
+    --card-color-darker: #1f1f1f;
   }
 }
 
@@ -39,10 +51,13 @@
 
   body {
     font-family: "Noto Sans Mono", monospace;
-    background-color: light-dark(var(--foreground), var(--background));
-    color: light-dark(var(--background), var(--foreground));
+    background-color: var(--background);
+    color: var(--foreground);
     min-height: 100vh;
-    color-scheme: light dark;
+    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
   }
 
   button {
@@ -55,16 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-block: 1rem;
-    background: #b92b27;
-    background: -webkit-linear-gradient(
-      to right,
-      #1565c0,
-      #e00d0d,
-      #e0730c,
-      #e00d0d,
-      #1565c0
-    );
+    padding: var(--spacing-sm);
     background: linear-gradient(
       to right,
       #1565c0,
@@ -73,44 +79,223 @@
       #e00d0d,
       #1565c0
     );
-    background-size: cover;
-  }
-
-  .bottom-header {
-    padding-inline: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
   }
 
   .top-header a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    border-bottom: 1px solid #ededee;
+    gap: var(--spacing-xs);
+    border-bottom: 1px solid #ededed;
     color: #ededee;
+    font-size: 0.75rem;
   }
 
   .top-header a:hover {
-    color: #918d8d;
+    opacity: 0.8;
+  }
+
+  .bottom-header {
+    padding-inline: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--spacing-md);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: var(--spacing-md);
+  }
+
+  header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 4vw, 2.125rem);
+    font-weight: 700;
+  }
+
+  .tagline {
+    color: var(--foreground-muted);
+    margin-bottom: var(--spacing-xs);
+    max-width: 34rem;
+  }
+
+  .badges {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.75rem;
+    color: var(--foreground-muted);
+  }
+
+  .playground {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    max-width: 900px;
+    margin-inline: auto;
+    background-color: var(--card-color);
+  }
+
+  .playground h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    color: var(--foreground);
+  }
+
+  .control-group {
+    margin-block: var(--spacing-sm);
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+
+  label {
+    display: block;
+    color: var(--foreground-muted);
+    font-size: 0.85rem;
+    position: absolute;
+    left: 12px;
+    top: 7px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background-color: var(--background);
+    border: 1px solid var(--border-color);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 6px;
+    height: 24px;
+    border-radius: 3px;
+    background: var(--foreground);
+    cursor: grab;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    width: 6px;
+    height: 24px;
+    border-radius: 3px;
+    background: var(--foreground);
+    cursor: grab;
+    border: none;
+  }
+
+  .value-display {
+    color: var(--foreground-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    position: absolute;
+    right: 12px;
+    top: 7px;
+  }
+
+  .image-display {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+  }
+
+  pixlated-image {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .example-card {
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    transition: border-color 0.2s ease;
+  }
+
+  .example-card:hover {
+    border-color: var(--foreground-muted);
+  }
+
+  .example-card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--foreground);
+    font-size: 1rem;
+  }
+
+  .example-card p {
+    color: var(--foreground-muted);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.85rem;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--foreground-muted);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-lg);
+    font-size: 0.85rem;
+  }
+
+  footer a:hover {
+    color: var(--foreground);
   }
 }
 
 @layer theme {
   .theme-btn {
     position: relative;
+    width: 32px;
+    height: 32px;
   }
 
   .theme-btn svg {
     position: absolute;
     top: 0;
-    right: 30px;
+    left: 0;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: transform 0.6s ease, opacity 0.3s ease;
     padding: 4px;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+  }
+
+  .theme-btn svg:hover {
+    background-color: var(--card-color-darker);
   }
 
   #dark-toggle {
@@ -127,175 +312,18 @@
     opacity: 0;
     pointer-events: none;
   }
-  .page-title {
-    display: flex;
-    justify-content: space-between;
-    padding-block: 1rem;
-  }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-inline: 1rem;
-  }
-
-  header {
-    margin-bottom: 60px;
-  }
-
-  h1 {
-    font-size: clamp(24px, 5vw, 36px);
-    font-weight: 700;
-  }
-
-  .tagline {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin-bottom: 10px;
-    max-width: 30rem;
-  }
-
-  .badges {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .badge {
-    background: var(--card-color);
-    backdrop-filter: blur(10px);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-
-  .playground {
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-bottom: 40px;
-    max-width: 900px;
-    margin-inline: auto;
-    background-color: var(--card-color);
-  }
-
-  .playground h2 {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    color: #b7c1ca;
-  }
-
-  .control-group {
-    margin-block: 10px;
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    margin-inline: auto;
-  }
-
-  label {
-    display: block;
-    font-weight: 600;
-    color: #d3d7db;
-    font-size: 0.95rem;
-    position: absolute;
-    left: 12px;
-    top: 6px;
-  }
-
-  input[type="range"] {
-    width: 100%;
-    height: 30px;
-    border-radius: 5px;
-    background-color: var(--background);
-    border: 1px solid var(--border-color);
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 6px;
-    height: 22px;
-    border-radius: 20px;
-    background: var(--card-color-darker);
-    cursor: grab;
-  }
-
-  input[type="range"]::-moz-range-thumb {
-    appearance: none;
-    width: 6px;
-    height: 22px;
-    border-radius: 20px;
-    background: var(--card-color-darker);
-    cursor: grab;
-  }
-
-  .value-display {
-    color: white;
-    font-weight: 600;
-    font-size: 0.875rem;
-    position: absolute;
-    right: 12px;
-    top: 6px;
-  }
-
-  .image-display {
-    text-align: center;
-  }
-
-  pixlated-image {
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .examples {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-  }
-
-  .example-card {
-    background: rgb(221, 217, 217);
-    border-radius: 16px;
-    padding: 30px;
-  }
-
-  .example-card h3 {
-    margin-bottom: 15px;
-    color: #2c3e50;
-    font-size: 1.25rem;
-  }
-
-  .example-card p {
-    color: #6c757d;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-  }
-
-  footer {
-    text-align: center;
-    color: var(--muted);
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid var(--muted);
-  }
-
-  footer a:hover {
-    color: var(--muted);
+  .theme-btn svg.rotate {
+    transform: rotate(360deg);
   }
 }
 
 @media (max-width: 768px) {
-  .demo-controls {
+  .examples {
     grid-template-columns: 1fr;
   }
 
-  .preset-buttons {
-    grid-template-columns: 1fr;
+  .container {
+    padding-inline: var(--spacing-sm);
   }
 }
