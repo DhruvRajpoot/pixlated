@@ -14,7 +14,7 @@ A lightweight web components that add film grain and noise textures to images an
 
 [View Live Demo](https://bridgetamana.github.io/pixlated/)
 
-<!-- ## Installation
+## Installation
 
 ### NPM
 
@@ -27,7 +27,7 @@ npm install pixlated
 ```html
 <script type="module" src="https://unpkg.com/pixlated/src/pixlated.js"></script>
 <script type="module" src="https://unpkg.com/pixlated/src/pixlated-bg.js"></script>
-``` -->
+```
 
 ## Usage
 
@@ -98,7 +98,7 @@ Apache-2.0 © [Bridget Amana](https://github.com/Bridgetamana)
 
 ## Links
 
-<!-- - [Documentation](https://bridgetamana.github.io/pixlated/) -->
+- [Documentation](https://bridgetamana.github.io/pixlated/)
 - [GitHub Repository](https://github.com/Bridgetamana/pixlated)
 - [Issues](https://github.com/Bridgetamana/pixlated/issues)
-<!-- - [NPM Package](https://www.npmjs.com/package/pixlated) -->
+- [NPM Package](https://www.npmjs.com/package/pixlated)
