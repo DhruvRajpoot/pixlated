@@ -1,0 +1,28 @@
+# Development & demo files
+test.html
+index.html
+style.css
+assets/
+
+# Git files
+.git/
+.github/
+.gitignore
+.gitattributes
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
