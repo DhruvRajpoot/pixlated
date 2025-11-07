@@ -108,11 +108,14 @@
           </div>
         </span>
         <div class="description-container">
-          <p class="tagline">Beautiful grain effects for your images</p>
+          <p class="tagline">
+            Lightweight web components that add film grain and noise textures to
+            images and backgrounds using Canvas API
+          </p>
           <div class="badges">
+            <span class="badge">Web Components</span>
+            <span class="badge">Canvas API</span>
             <span class="badge">Zero Dependencies</span>
-            <span class="badge">Lightweight</span>
-            <span class="badge">Performant</span>
             <span class="badge">Accessible</span>
           </div>
         </div>
@@ -120,7 +123,10 @@
     </header>
     <div class="container">
       <div class="playground">
-        <h2>Interactive Playground</h2>
+        <h2>pixlated-image</h2>
+        <p class="playground-description">
+          Add film grain and noise texture to images
+        </p>
         <div class="demo-controls">
           <div class="image-display">
             <pixlated-image
@@ -145,11 +151,24 @@
             />
             <span class="value-display" id="intensityValue">0.3</span>
           </div>
+          <div class="code-example">
+            <pre><code>&lt;pixlated-image
+  src="photo.jpg"
+  intensity="0.3"
+  width="400"
+  height="400"
+  alt="Description"
+&gt;
+&lt;/pixlated-image&gt;</code></pre>
+          </div>
         </div>
       </div>
 
       <div class="playground">
-        <h2>Background Noise</h2>
+        <h2>pixlated-bg</h2>
+        <p class="playground-description">
+          Add noise texture to background elements
+        </p>
         <div class="demo-controls">
           <div class="bg-display">
             <pixlated-bg
@@ -160,8 +179,9 @@
             >
               <h3 class="demo-bg-title">Noisy Background</h3>
               <p class="demo-bg-text">
-                This is a grainy background effect perfect for hero sections, cards, or any element that needs texture. 
-                Adjust the intensity below to see the effect.
+                This is a grainy background effect perfect for hero sections,
+                cards, or any element that needs texture. Adjust the intensity
+                below to see the effect.
               </p>
             </pixlated-bg>
           </div>
@@ -176,6 +196,15 @@
               value="0.15"
             />
             <span class="value-display" id="bgIntensityValue">0.15</span>
+          </div>
+          <div class="code-example">
+            <pre><code>&lt;pixlated-bg
+  intensity="0.15"
+  color="#09090b"
+&gt;
+  &lt;h1&gt;Your content here&lt;/h1&gt;
+  &lt;p&gt;Perfect for hero sections&lt;/p&gt;
+&lt;/pixlated-bg&gt;</code></pre>
           </div>
         </div>
       </div>
