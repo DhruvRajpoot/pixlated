@@ -2,9 +2,25 @@
   font-family: "NotoSansMono";
   font-style: normal;
   font-weight: 400 700;
-    font-display: swap;
+  font-display: swap;
   src: url("assets/font/NotoSansMono-VariableFont_wdth\,wght.ttf")
     format("truetype");
+}
+
+:root {
+  --background: #fafafa;
+  --foreground: #09090b;
+  --border-color: #dddde0;
+  --card-color: #ededee;
+  --card-color-darker: #bcbcbd;
+}
+
+.dark {
+  --background: #09090b;
+  --border-color: #242425;
+  --foreground: #fafafa;
+  --card-color: #141415;
+  --card-color-darker: #1f1f20;
 }
 
 @layer reset {
@@ -21,9 +37,10 @@
 
   body {
     font-family: "Noto Sans Mono", monospace;
-    background: #161616;
-    color: #ededed;
+    background-color: light-dark(var(--foreground), var(--background));
+    color: light-dark(var(--background), var(--foreground));
     min-height: 100vh;
+    color-scheme: light dark;
   }
 
   button {
@@ -35,9 +52,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(54, 53, 53);
   padding-block: 1rem;
-  background-image: url("./assets/images/page-gradient.png");
+  background: #b92b27;
+  background: -webkit-linear-gradient(
+    to right,
+    #1565c0,
+    #e00d0d,
+    #e0730c,
+    #e00d0d,
+    #1565c0
+  );
+  background: linear-gradient(
+    to right,
+    #1565c0,
+    #e00d0d,
+    #e0730c,
+    #e00d0d,
+    #1565c0
+  );
   background-size: cover;
 }
 
@@ -45,6 +77,7 @@
   padding-inline: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 .top-header a {
@@ -52,11 +85,46 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #ededee;
+  color: #ededee;
 }
 
 .top-header a:hover {
   color: #918d8d;
+}
+
+.theme-btn {
+  position: relative;
+}
+
+.theme-btn svg {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  padding: 4px;
+  border-radius: 20px;
+  background-color: var(--card-color);
+}
+
+#dark-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.dark #dark-toggle {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.dark #light-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-btn svg.rotate {
+  transform: rotate(360deg);
 }
 
 .page-title {
@@ -73,7 +141,6 @@
 
 header {
   margin-bottom: 60px;
-  color: white;
 }
 
 h1 {
@@ -103,12 +170,13 @@ h1 {
 }
 
 .playground {
-  border: 1px solid #afaeae;
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 10px 20px;
   margin-bottom: 40px;
   max-width: 900px;
   margin-inline: auto;
+  background-color: var(--card-color);
 }
 
 .playground h2 {
@@ -135,7 +203,8 @@ input[type="range"] {
   width: 100%;
   height: 30px;
   border-radius: 5px;
-  background: #5f5d5d;
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
   outline: none;
   -webkit-appearance: none;
   appearance: none;
@@ -147,7 +216,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 6px;
   height: 25px;
   border-radius: 20px;
-  background: #9698a0;
+  background: var(--card-color-darker); 
   cursor: grab;
 }
 
@@ -155,7 +224,7 @@ input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #667eea;
+  background: #4b4b4c;
   cursor: pointer;
   border: none;
 }

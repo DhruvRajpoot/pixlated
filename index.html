@@ -7,24 +7,33 @@
       name="description"
       content="Pixlated is a lightweight web component for creating grainy/noisy image effects using Canvas or CSS. "
     />
-    <meta name="application-name" content="pixlated">
-    <meta name="apple-mobile-web-app-title" content="pixlated">
-    <meta property="og:title" content="pixlated">
-    <meta property="og:description" content="A lightweight web component for creating grainy/noisy image effects using Canvas or CSS.">
-    <meta property="og:url" content="https://bridgetamana.github.io/pixlated/">
-    <meta property="og:site_name" content="pixlated">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="/assets/images/opengraph-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="700">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@bridget_amana">
-    <meta name="twitter:title" content="pixlated">
-    <meta name="twitter:description" content="A lightweight web component for creating grainy/noisy image effects using Canvas or CSS.">
-    <meta name="twitter:image" content="/assets/images/opengraph-image.png">
-    <meta name="twitter:image:width" content="1200">
-    <meta name="twitter:image:height" content="700">
+    <meta name="application-name" content="pixlated" />
+    <meta name="apple-mobile-web-app-title" content="pixlated" />
+    <meta property="og:title" content="pixlated" />
+    <meta
+      property="og:description"
+      content="A lightweight web component for creating grainy/noisy image effects using Canvas or CSS."
+    />
+    <meta
+      property="og:url"
+      content="https://bridgetamana.github.io/pixlated/"
+    />
+    <meta property="og:site_name" content="pixlated" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="/assets/images/opengraph-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="700" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@bridget_amana" />
+    <meta name="twitter:title" content="pixlated" />
+    <meta
+      name="twitter:description"
+      content="A lightweight web component for creating grainy/noisy image effects using Canvas or CSS."
+    />
+    <meta name="twitter:image" content="/assets/images/opengraph-image.png" />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="700" />
     <title>pixlated - Beautiful Grain Effects for Images</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -61,10 +70,11 @@
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              width="24"
-              height="24"
+              width="30"
+              height="30"
               color="currentColor"
               fill="none"
+              id="dark-toggle"
             >
               <path
                 d="M21.5 14.0784C20.3003 14.7189 18.9301 15.0821 17.4751 15.0821C12.7491 15.0821 8.91792 11.2509 8.91792 6.52485C8.91792 5.06986 9.28105 3.69968 9.92163 2.5C5.66765 3.49698 2.5 7.31513 2.5 11.8731C2.5 17.1899 6.8101 21.5 12.1269 21.5C16.6849 21.5 20.503 18.3324 21.5 14.0784Z"
@@ -77,10 +87,11 @@
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              width="24"
-              height="24"
+              width="30"
+              height="30"
               color="currentColor"
               fill="none"
+              id="light-toggle"
             >
               <path
                 d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
@@ -182,12 +193,6 @@
       </div>
 
       <footer>
-        <p>
-          Made with ❤️ by
-          <a href="https://github.com/Bridgetamana" target="_blank"
-            >Bridget Amana</a
-          >
-        </p>
         <p style="margin-top: 10px; opacity: 0.8">
           <a href="https://github.com/Bridgetamana/pixlated" target="_blank"
             >View on GitHub</a
@@ -205,12 +210,26 @@
     <script src="/src/pixlated.js"></script>
     <script>
       const demoImage = document.getElementById("demoImage");
+      const darkToggle = document.getElementById("dark-toggle");
+      const lightToggle = document.getElementById("light-toggle");
       const intensitySlider = document.getElementById("intensitySlider");
       const intensityValue = document.getElementById("intensityValue");
       intensitySlider.addEventListener("input", (e) => {
         const value = e.target.value;
         intensityValue.textContent = value;
         demoImage.setAttribute("intensity", value);
+      });
+
+      darkToggle.addEventListener("click", () => {
+        darkToggle.classList.add("rotate");
+        document.body.classList.remove("dark");
+        darkToggle.classList.remove("rotate")
+      });
+
+      lightToggle.addEventListener("click", () => {
+        lightToggle.classList.add("rotate");
+        document.body.classList.add("dark");
+        lightToggle.classList.remove("rotate")
       });
     </script>
   </body>
