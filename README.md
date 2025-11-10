@@ -34,6 +34,14 @@ npm install pixlated
 
 ## Usage
 
+## Effect Preview
+
+See the subtle, high-performance film grain effect `pixlated` adds to an image.
+
+| Before (Original) | After (With `<pixlated-image>`) |
+| :---: | :---: |
+| <img src="./assets/images/annie.jpg" alt="Original image without grain effect" width="450"> | <img src="./assets/images/annie-pixlated.PNG" alt="Image with pixlated grain effect applied" width="450"> |
+
 ### Image Grain Effect
 
 Add noise texture to images:
