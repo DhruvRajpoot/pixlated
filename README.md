@@ -1,6 +1,6 @@
 # pixlated
 
-![NPM Version](https://img.shields.io/npm/v/pixlated?style=flat)
+[![NPM Version](https://img.shields.io/npm/v/pixlated?style=flat)](https://www.npmjs.com/package/pixlated)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/pixlated)
 
 A lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API.
