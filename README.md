@@ -38,9 +38,11 @@ npm install pixlated
 
 See the subtle, high-performance film grain effect `pixlated` adds to an image.
 
+<!-- markdownlint-disable MD033 -->
 | Before (Original) | After (With `<pixlated-image>`) |
 | :---: | :---: |
-| <img src="./assets/images/annie.jpg" alt="Original image without grain effect" width="450"> | <img src="./assets/images/annie-pixlated.PNG" alt="Image with pixlated grain effect applied" width="450"> |
+| <img src="./assets/images/annie.jpg" alt="Original image without grain effect" width="450" height="310"> | <img src="./assets/images/annie-pixlated.PNG" alt="Image with pixlated grain effect applied" width="450" height="310"> |
+<!-- markdownlint-enable MD033 -->
 
 ### Image Grain Effect
 
@@ -105,11 +107,10 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for gu
 
 ## License
 
-Apache-2.0 © [Bridget Amana](https://github.com/Bridgetamana)
+License under [Apache-2.0](LICENSE)
 
 ## Links
 
-- [Documentation](https://bridgetamana.github.io/pixlated/)
-- [GitHub Repository](https://github.com/Bridgetamana/pixlated)
+- [Documentation](https://github.com/Bridgetamana/pixlated/blob/main/README.md)
 - [Issues](https://github.com/Bridgetamana/pixlated/issues)
 - [NPM Package](https://www.npmjs.com/package/pixlated)
