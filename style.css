@@ -176,6 +176,20 @@
 
   .code-example {
     width: 100%;
+    position: relative;
+  }
+
+  .code-example button.copy {
+    background: var(--card-color);
+    color: var(--foreground-muted);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    padding: 4px 5px;
+    font-size: 0.75rem;
   }
 
   .code-example pre {
@@ -365,14 +379,14 @@
   }
 
   .demo-bg-title {
-    color: var(--foreground);
+    color: #ededee;
     margin-bottom: var(--spacing-sm);
     font-size: 1.25rem;
     font-weight: 600;
   }
 
   .demo-bg-text {
-    color: var(--foreground-muted);
+    color: #ededee;
     max-width: 500px;
   }
 }

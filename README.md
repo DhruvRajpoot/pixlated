@@ -1,6 +1,9 @@
 # pixlated
 
 [![NPM Version](https://img.shields.io/npm/v/pixlated?style=flat)](https://www.npmjs.com/package/pixlated)
+![Contributors](https://img.shields.io/github/contributors/Bridgetamana/pixlated.svg?style=flat)
+![NPM Downloads](https://img.shields.io/npm/dw/pixlated?style=flat)
+![Repo Stars](https://img.shields.io/github/stars/Bridgetamana/pixlated?style=flat)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/pixlated)
 
 A lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API.
@@ -33,6 +36,16 @@ npm install pixlated
 ```
 
 ## Usage
+
+## Effect Preview
+
+See the subtle, high-performance film grain effect `pixlated` adds to an image.
+
+<!-- markdownlint-disable MD033 -->
+| Before (Original) | After (With `<pixlated-image>`) |
+| :---: | :---: |
+| <img src="./assets/images/annie.jpg" alt="Original image without grain effect" width="450" height="310"> | <img src="./assets/images/annie-pixlated.PNG" alt="Image with pixlated grain effect applied" width="450" height="310"> |
+<!-- markdownlint-enable MD033 -->
 
 ### Image Grain Effect
 
@@ -97,11 +110,10 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for gu
 
 ## License
 
-Apache-2.0 © [Bridget Amana](https://github.com/Bridgetamana)
+License under [Apache-2.0](LICENSE)
 
 ## Links
 
-- [Documentation](https://bridgetamana.github.io/pixlated/)
-- [GitHub Repository](https://github.com/Bridgetamana/pixlated)
+- [Documentation](https://github.com/Bridgetamana/pixlated/blob/main/README.md)
 - [Issues](https://github.com/Bridgetamana/pixlated/issues)
 - [NPM Package](https://www.npmjs.com/package/pixlated)
