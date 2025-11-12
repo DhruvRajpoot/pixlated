@@ -25,7 +25,7 @@ A lightweight web components that add film grain and noise textures to images an
 npm install pixlated
 ```
 
-### CDN (No type="module" needed!)
+### CDN
 
 ```html
 <!-- Load both components -->
@@ -47,8 +47,9 @@ Or load individually:
 
 ### Quick Start (NPM)
 
+After installation
+
 ```javascript
-// Simple import - no paths needed!
 import 'pixlated';
 // Now you can use <pixlated-image> in your HTML
 ```
