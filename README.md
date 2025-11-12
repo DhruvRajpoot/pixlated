@@ -45,14 +45,21 @@ Or load individually:
 
 ## Usage
 
-### Quick Start (NPM)
-
-After installation
+### With Bundlers (Vite, Webpack, etc)
 
 ```javascript
 import 'pixlated';
 // Now you can use <pixlated-image> in your HTML
 ```
+
+### Plain HTML (No Bundler)
+
+```html
+
+<script src="./node_modules/pixlated/src/pixlated.js"></script>
+```
+
+### Using the Components
 
 ## Effect Preview
 
