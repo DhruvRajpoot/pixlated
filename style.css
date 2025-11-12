@@ -38,9 +38,9 @@
 }
 
 @layer reset {
-  * {
-    padding: 0;
-    margin: 0;
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
 
@@ -51,14 +51,14 @@
 
   body {
     font-family: "Noto Sans Mono", monospace;
+    padding: 0;
+    margin: 0;
     background-color: var(--background);
     color: var(--foreground);
     min-height: 100vh;
-    line-height: 1.6;
     font-size: 1rem;
     line-height: 1.5;
     transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
-    will-change: color, background-color;
   }
 
   button {
@@ -149,7 +149,7 @@
   .playground {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
     max-width: 900px;
     margin-inline: auto;
@@ -225,7 +225,7 @@
     position: absolute;
     left: 12px;
     top: 7px;
-    pointer-events: none;
+    cursor: pointer;
   }
 
   input[type="range"] {
@@ -238,6 +238,11 @@
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
+  }
+
+  input[type="range"]:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
   }
 
   input[type="range"]::-webkit-slider-thumb {
@@ -377,17 +382,16 @@
     min-height: 300px;
     border-radius: var(--radius-md);
     padding: var(--spacing-lg);
+    color: #ededee;
   }
 
   .demo-bg-title {
-    color: #ededee;
     margin-bottom: var(--spacing-sm);
     font-size: 1.25rem;
     font-weight: 600;
   }
 
   .demo-bg-text {
-    color: #ededee;
     max-width: 500px;
   }
 }

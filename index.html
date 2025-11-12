@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fafafa">
     <meta
       name="description"
       content="Lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API."
@@ -41,7 +42,7 @@
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="700" />
     <title>pixlated - Film Grain & Noise Texture Web Components</title>
-    <link rel="stylesheet" href="style.css" rel="preload" />
+    <link href="style.css" rel="stylesheet" />
     <link
       rel="shortcut icon"
       href="./assets/images/favicon.ico"
@@ -50,8 +51,12 @@
   </head>
   <body>
     <header>
-      <span class="top-header">
-        <a href="https://github.com/Bridgetamana/pixlated" class="github-link" target="_blank">
+      <nav class="top-header">
+        <a
+          href="https://github.com/Bridgetamana/pixlated"
+          class="github-link"
+          target="_blank"
+        >
           <svg
             width="15"
             height="15"
@@ -68,9 +73,9 @@
           </svg>
           Give us a Star
         </a>
-      </span>
+      </nav>
       <div class="bottom-header">
-        <span class="page-title">
+        <div class="page-title">
           <h1>pixlated</h1>
           <div class="theme-btn">
             <svg
@@ -114,7 +119,7 @@
               ></path>
             </svg>
           </div>
-        </span>
+        </div>
         <div class="description-container">
           <p class="tagline">
             Lightweight web components that add film grain and noise textures to
@@ -358,7 +363,7 @@
           setTimeout(() => {
             btn.textContent = "Copy";
             btn.disabled = false;
-          }, 400);
+          }, 1000);
         });
       });
     </script>
