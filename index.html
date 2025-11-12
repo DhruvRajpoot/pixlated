@@ -41,7 +41,7 @@
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="700" />
     <title>pixlated - Film Grain & Noise Texture Web Components</title>
-    <link rel="stylesheet" href="style.css" rel="preload"/>
+    <link rel="stylesheet" href="style.css" rel="preload" />
     <link
       rel="shortcut icon"
       href="./assets/images/favicon.ico"
@@ -160,7 +160,12 @@
             <span class="value-display" id="intensityValue">0.3</span>
           </div>
           <div class="code-example">
-            <button class="copy" type="button" title="Copy" data-for="pixlated-image">
+            <button
+              class="copy"
+              type="button"
+              title="Copy"
+              data-for="pixlated-image"
+            >
               Copy
             </button>
             <pre><code id="pixlated-image">&lt;pixlated-image
@@ -209,7 +214,12 @@
             <span class="value-display" id="bgIntensityValue">0.15</span>
           </div>
           <div class="code-example">
-            <button class="copy" type="button" title="Copy" data-for="pixlated-bg">
+            <button
+              class="copy"
+              type="button"
+              title="Copy"
+              data-for="pixlated-bg"
+            >
               Copy
             </button>
             <pre><code id="pixlated-bg">&lt;pixlated-bg
@@ -282,8 +292,8 @@
       </footer>
     </div>
 
-    <script type="module" src="./src/pixlated.js"></script>
-    <script type="module" src="./src/pixlated-bg.js"></script>
+    <script src="./src/pixlated.js"></script>
+    <script src="./src/pixlated-bg.js"></script>
     <script>
       const demoImage = document.getElementById("demoImage");
       const demoBg = document.getElementById("demoBg");
@@ -329,7 +339,7 @@
         document.body.classList.add("dark");
         saveTheme(true);
       });
-      
+
       copyBtns.forEach((copyBtn) => {
         copyBtn.addEventListener("click", (e) => {
           const btn = e.target;
@@ -348,8 +358,8 @@
             btn.textContent = "Copy";
             btn.disabled = false;
           }, 400);
-        })
-      })
+        });
+      });
     </script>
   </body>
 </html>

@@ -7,6 +7,7 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/min/pixlated)
 
 A lightweight web components that add film grain and noise textures to images and backgrounds using Canvas API.
+[View Live Demo](https://bridgetamana.github.io/pixlated/)
 
 ## Features
 
@@ -16,10 +17,6 @@ A lightweight web components that add film grain and noise textures to images an
 - High-performance Canvas rendering
 - Responsive and accessible
 
-## Demo
-
-[View Live Demo](https://bridgetamana.github.io/pixlated/)
-
 ## Installation
 
 ### NPM
@@ -28,14 +25,33 @@ A lightweight web components that add film grain and noise textures to images an
 npm install pixlated
 ```
 
-### CDN
+### CDN (No type="module" needed!)
 
 ```html
-<script type="module" src="https://unpkg.com/pixlated/src/pixlated.js"></script>
-<script type="module" src="https://unpkg.com/pixlated/src/pixlated-bg.js"></script>
+<!-- Load both components -->
+<script src="https://unpkg.com/pixlated/src/pixlated.js"></script>
+<script src="https://unpkg.com/pixlated/src/pixlated-bg.js"></script>
+```
+
+Or load individually:
+
+```html
+<!-- Just image component -->
+<script src="https://unpkg.com/pixlated/src/pixlated.js"></script>
+
+<!-- Or just background component -->
+<script src="https://unpkg.com/pixlated/src/pixlated-bg.js"></script>
 ```
 
 ## Usage
+
+### Quick Start (NPM)
+
+```javascript
+// Simple import - no paths needed!
+import 'pixlated';
+// Now you can use <pixlated-image> in your HTML
+```
 
 ## Effect Preview
 
